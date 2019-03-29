@@ -1,0 +1,37 @@
+<!--pages/index/index.wxml-->
+<view class="page">
+<view class="pageTop">
+    <view class="Month">{{month}}</view>
+    <view class="year">{{year}}</view>
+    <view class="StuWeek">第{{today.StuWeek}}周</view>
+</view>
+<view class="topTabSwiper">
+    <view wx:for="{{dayList}}" wx:for-index="index" class="tab-item {{currentSwiper==index ?'active':'noactive'}}" wx:key="index" bindtap="changeTab" data-current="{{index}}">
+        <view class="TimeOrderBox scroll-view-item bc_red {{id == index ? 'coloBack':''}}" id="{{index}}" data-selectTime="{{item.month}}/{{item.date2}}" data-week="{{item.day}}">
+            <view class="TimesWD">
+                <text class="TimeOrderText" wx:if="{{today.date2==item.date2}}">今天</text>
+                <text class="TimeOrderText" wx:else>周{{item.day}}</text>
+                <view class="TimeOrderDay">
+                    <text class="TimeOrderTextDay">{{item.date2}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<swiper current="{{currentTab}}" class="swiper" bindchange="switchSwiper">
+    <view wx:for="{{WeekTermList}}" wx:for-item="WeekDay" wx:for-index="day">
+        <swiper-item>
+            <view wx:if="WeekDay['classData'].length>0">
+                <view wx:for="{{WeekDay.classData}}" wx:for-item="class">
+                    <view wx:for="{{class.schedule}}" wx:for-item="classSchedule">
+                        <view class="classData" wx:if="{{classSchedule.day-1==day}}">
+                            <text>{{class.name}}</text>
+                            <text class="room">@{{classSchedule.room}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+    </view>
+</swiper>
+</view>

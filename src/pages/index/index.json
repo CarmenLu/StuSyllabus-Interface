@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "Stu课表demo",
+      "navigationBarTextStyle": "black"
+    }
+}

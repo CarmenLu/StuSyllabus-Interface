@@ -1,11 +1,28 @@
 {
   "pages": [
-    "pages/test/test"
+    "pages/index/index",
+    "pages/log/log"
   ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "img/日程.png",
+        "iconPath": "img/日程.png",
+        "text": "课表"
+      },
+      {
+        "pagePath": "pages/log/log",
+        "selectedIconPath": "img/用户.png",
+        "iconPath": "img/用户.png",
+        "text": "something"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "Stu课表demo",
     "navigationBarTextStyle": "black"
   },
   "networkTimeout": {
